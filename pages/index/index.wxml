@@ -4,4 +4,14 @@
    <!-- 轮播图 -->
    <swiper swiperData="{{ swiperData }}" indicatorDots="{{ swiperOptions.indicatorDots }}" autoplay="{{ swiperOptions.autoplay }}" interval="{{ swiperOptions.interval }}" duration="{{ swiperOptions.duration }}"></swiper>
 </view>
+<view class="nav">
+        <van-grid column-num="4">
+            <van-grid-item 
+                wx:key="index"
+                icon-color="{{ item.color }}" 
+                icon="{{ item.icon }}" 
+                text="{{ item.text }}" 
+                wx:for="{{ navData }}" />
+        </van-grid>
+    </view>
 </view>
