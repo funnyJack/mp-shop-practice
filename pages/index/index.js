@@ -83,6 +83,10 @@ Page({
           // 老数据合并新数据，做累加操作
           goodsData: this.data.goodsData.concat(res.data.data.result)
         })
+        // 更改页码
+        this.setData({
+          page:this.data.page += 1
+      })
       } else {
         // 给出用户提示
         wx.showToast({
@@ -94,14 +98,15 @@ Page({
     })
   },
 
+  clickSearch(){
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom(){
-        // 更改页码
-        this.setData({
-            page:this.data.page += 1
-        })
         this.http(this.data.page)
     },
 
