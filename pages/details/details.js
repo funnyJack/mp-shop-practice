@@ -63,5 +63,13 @@ Page({
               })
           }
       })
+  },
+   /**
+     * 立即购买
+     */
+    onClickBuy(e){
+      wx.navigateTo({
+        url: '/pages/buy/buy?id='+e.currentTarget.dataset.id,
+      })
   }
 })
