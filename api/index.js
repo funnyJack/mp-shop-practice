@@ -1,5 +1,5 @@
 const { request } = require("../utils/request")
-const {baseUrl,banner,goods,hotSearch,search,goodsDetails,cart,addCart,delCart,category,buy } = require("../api/base")
+const {login,baseUrl,banner,goods,hotSearch,search,goodsDetails,cart,addCart,delCart,category,buy } = require("../api/base")
 
 function getBanner(data){
   return request(baseUrl+banner,"GET",data)
@@ -63,6 +63,9 @@ function getBuy(data){
   return request(baseUrl + buy,"GET",data) 
 }
 
+function getLogin(data){
+  return request(baseUrl + login,"POST",data) 
+}
 
 module.exports = {
   getBanner,
@@ -74,5 +77,6 @@ module.exports = {
   addGoodsCart,
   delGoodsCart,
   getCategory,
-  getBuy
+  getBuy,
+  getLogin
 }
